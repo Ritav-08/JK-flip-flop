@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 21.04.2026 13:03:29
-// Design Name: 
-// Module Name: tb_JKff
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 
 module tb_JKff;
 reg J_ti;
@@ -87,19 +66,11 @@ forever
    #5 clk_ti = ~clk_ti;
 end
 
-//Reset --Why reset is high till time 7, as clock is high at 5?
-//-- reset at first clock cycle is necessary to remove race condition for all values of j and k, otherwise D, Q+ and Q will be 'X'
-//-- At time 5, clk is high for the first time, reset till 6 can initialize D, Q and Q+ to 0. But exp_Q also requires to be initialized.
-//-- So, at time 7, reset is set high so that these parameters can initialize. Design is proper but these are some constraints in simulation.
+//Reset
 initial begin
 rst_ti = 1'b1;
 #7 rst_ti = 1'b0;
 end
-//If this design is so dependent on reset, what if reset is removed? will the design fail? what if reset is set 0 before first clock cycle?
-//without reset, the design still behave similar, if reset is removed or set 0 before first clock cycle, D = 0 at J=0, K=1. 
-//whenever this condition arrive, all DUT parameters will be initialized. then the design start working as JK flip flop.
-//exp_Q will be initialized at JK = 01 or 10, at other possible combinations, X will pass.
-//Add these QnA in readme.
 
 //auto check
 task check; begin 
