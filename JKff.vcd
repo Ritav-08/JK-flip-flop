@@ -1,0 +1,155 @@
+$date
+   Wed Apr 22 08:24:11 2026
+$end
+
+$version
+  2025.2
+  $dumpfile ("JKff.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module tb_JKff $end
+$var reg 1 ! J_ti $end
+$var reg 1 " K_ti $end
+$var reg 1 # clk_ti $end
+$var reg 1 $ rst_ti $end
+$var wire 1 % Q_to $end
+$var wire 1 & Qbar_to $end
+$var integer 32 ' count [31:0] $end
+$var integer 32 ( pass [31:0] $end
+$var integer 32 ) fail [31:0] $end
+$var reg 1 * exp_Q $end
+$var reg 1 + exp_Qbar $end
+$scope module UUT $end
+$var wire 1 , J_i $end
+$var wire 1 - K_i $end
+$var wire 1 . rst_i $end
+$var wire 1 / clk_i $end
+$var reg 1 0 Q_o $end
+$var wire 1 & Qbar_o $end
+$var wire 1 1 D $end
+$upscope $end
+$scope task check $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+0"
+0#
+1$
+x%
+x&
+b0 '
+b0 (
+b0 )
+0*
+x+
+0,
+0-
+1.
+0/
+x0
+x1
+$end
+
+#3000
+1!
+1,
+
+#5000
+1#
+0%
+1&
+1/
+00
+11
+
+#6000
+b1 '
+b1 (
+1+
+
+#7000
+0$
+0.
+
+#10000
+0#
+0/
+
+#13000
+0!
+0,
+01
+
+#15000
+1#
+1/
+
+#16000
+b10 '
+b10 (
+
+#20000
+0#
+0/
+
+#23000
+1"
+1-
+
+#25000
+1#
+1/
+
+#26000
+b11 '
+b11 (
+
+#30000
+0#
+0/
+
+#33000
+1!
+1,
+11
+
+#35000
+1#
+1%
+0&
+1/
+10
+01
+
+#36000
+b100 '
+b100 (
+1*
+0+
+
+#40000
+0#
+0/
+
+#43000
+0!
+0"
+0,
+0-
+11
+
+#45000
+1#
+1/
+
+#46000
+b101 '
+b101 (
